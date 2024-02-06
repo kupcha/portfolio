@@ -1,4 +1,4 @@
-import { ThemeProvider, createTheme, responsiveFontSizes } from "@mui/material";
+import { ThemeProvider, Typography, createTheme, responsiveFontSizes } from "@mui/material";
 import Card from "@mui/material/Card";
 import Container from "@mui/material/Container";
 import List from "@mui/material/List";
@@ -17,8 +17,10 @@ let theme = createTheme({
   typography: {
     body1: {
       textAlign: "center",
+      color:"#3c3c3c"
     },
     fontFamily: ["Ubuntu", "sans-serif"].join(","),
+    
   },
   palette: {
     primary: {
@@ -36,45 +38,75 @@ const Contact = () => {
   return (
     <ThemeProvider theme={theme}>
       <Container
-        maxWidth="lg"
+        maxWidth="xl"
+        
+
         sx={{
           alignItems: "center",
           textAlign: "center",
           justifyContent: "center",
+          display:"flex",
+          flexDirection:"column",
+          height:"90vh"
         }}
       >
         <Card
+        raised
           sx={{
-            maxWidth: "md",
-            m: 15,
-            p: 5,
+            maxWidth: "lg",
+            px: 10,
             textAlign: "center",
             justifyContent: "center",
+            color:"#3c3c3c"
           }}
         >
-          <h3>feel free to reach out to me!</h3>
+          
           <List>
+
+
+          <ListItem bgColor="primary.light">
+              <ListItemText
+                primaryTypographyProps={{
+                  variant: "h5",
+                  textAlign: "center",
+                }}
+              >
+                feel free to reach out to me!
+              </ListItemText>
+            </ListItem>
+
+
             <ListItem>
               <ListItemText
-                primaryTypographyProps={{ variant: "h3", textAlign: "center", fontWeight:'bolder' }}
+                primaryTypographyProps={{
+                  variant: "h1",
+                  textAlign: "center",
+                  fontWeight: "bolder",
+                }}
               >
                 Patrick Kupcha
               </ListItemText>
             </ListItem>
+
+
             <ListItem>
               <ListItemText
-                primaryTypographyProps={{ variant: "h5", textAlign: "center", }}
+                primaryTypographyProps={{ variant: "h4", textAlign: "center" }}
               >
                 PharmD, RPh
               </ListItemText>
             </ListItem>
+
+
             <ListItem>
               <ListItemText
-                primaryTypographyProps={{ variant: "h5", textAlign: "center", }}
+                primaryTypographyProps={{ variant: "h4", textAlign: "center" }}
               >
                 Software Engineer
               </ListItemText>
             </ListItem>
+
+
             <ThemeProvider theme={theme}>
               <Stack
                 direction="row"
@@ -107,6 +139,7 @@ const Contact = () => {
                 </ListItemIcon>
               </Stack>
             </ThemeProvider>
+
           </List>
         </Card>
       </Container>

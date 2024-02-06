@@ -14,23 +14,27 @@ import './css/index.css';
 import { useRouteError, Link } from "react-router-dom";
 import Card from '@mui/material/Card'
 
-  let theme = createTheme({
-    textTransform: "none",
-    typography: {
-      fontFamily: ['Ubuntu', 'sans-serif'].join(','),
+let theme = createTheme({
+  palette: {
+    primary: {
+      main: "#07745e",
+      dark: "#004836",
+      darker: "#036450",
+      light: "#80c8ba",
+      lighter: "#dff1ef",
     },
-    palette: {
-      primary: {
-        main: "#6002ee",
-        light: "#b794f6",
-        dark: "#0000d6",
-        contrastText: "#efe5fd"
-      },
-      backgroundColor: "#3b3b3b",
+    secondary: {
+      main: "#a4241c",
     },
-  });
-  
-  theme = responsiveFontSizes(theme);
+  },
+  textTransform: "none",
+  typography: {
+    fontFamily: ["Ubuntu", "sans-serif"].join(","),
+    color: "primary.lighter",
+  },
+});
+theme = responsiveFontSizes(theme);
+
   
   export default function ErrorPage() {
     const error = useRouteError();
@@ -38,7 +42,7 @@ import Card from '@mui/material/Card'
 
   return (
     <ThemeProvider theme={theme}>
-    <Container maxWidth="lg">
+    <Container maxWidth="xl">
       <AppBar position="static">
         <Toolbar>
           <Typography component="div" sx={{ flexGrow: 1 }}>
@@ -63,7 +67,7 @@ import Card from '@mui/material/Card'
       This page doesn't exist.
       </Typography>
       <Typography variant='h5' sx={{m:2, p:1}}>
-      What are you trying to find, friend?
+        You'll have to try again, friend.
       </Typography>
         
       </Card>
