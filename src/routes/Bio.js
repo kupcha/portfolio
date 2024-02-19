@@ -326,7 +326,7 @@ const Bio = () => {
             >
               <Stack
                 spacing={5}
-                direction={{ xs: "column", sm: "column", md: "row" }}
+                direction={{ xs: "column", sm: "row", md: "row" }}
                 p={0}
                 sx={{
                   typography: {
